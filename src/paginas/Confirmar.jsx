@@ -1,3 +1,4 @@
+// Cambio de enlace
 import logoDog from '../assets/dog-hand.webp'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -12,7 +13,7 @@ export const Confirmar = () => {
     const [mensaje, setMensaje] = useState({})
     const verifyToken = async () => {
         try {
-            const url = `http://localhost:3000/api/confirmar/${token}`
+            const url = `${import.meta.env.VITE_BACKEND_URL}/confirmar/${token}`
             const respuesta = await axios.get(url)
             setMensaje({ respuesta: respuesta.data.msg, tipo: true })
         } catch (error) {

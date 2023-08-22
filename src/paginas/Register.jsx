@@ -1,3 +1,4 @@
+//Cambio enlace
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios';
@@ -26,7 +27,7 @@ export const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const url = "http://localhost:3000/api/registro"
+            const url = `${import.meta.env.VITE_BACKEND_URL}/registro`
             const respuesta = await axios.post(url, form)
             setMensaje({ respuesta: respuesta.data.msg, tipo: true })
             setform({})
