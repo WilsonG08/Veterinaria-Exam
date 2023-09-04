@@ -1,10 +1,10 @@
-// Cambio de enlace
 import logoDog from '../assets/dog-hand.webp'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Mensaje from '../componets/Alertas/Mensaje';
+
 
 
 export const Confirmar = () => {
@@ -18,6 +18,7 @@ export const Confirmar = () => {
             setMensaje({ respuesta: respuesta.data.msg, tipo: true })
         } catch (error) {
             setMensaje({ respuesta: error.response.data.msg, tipo: false })
+
         }
     }
     useEffect(() => {
